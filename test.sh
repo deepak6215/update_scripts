@@ -1,4 +1,4 @@
-cd /home/iplon/repos
+cd /home/iplon/repos_1
 
 sudo apt-get install -y adduser libfontconfig1
 wget https://dl.grafana.com/oss/release/grafana_9.0.7_arm64.deb
