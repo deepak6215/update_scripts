@@ -5,13 +5,8 @@ sudo dpkg -i grafana_9.0.7_arm64.deb
 wget https://dl.influxdata.com/influxdb/releases/influxdb_1.8.5_arm64.deb
 sudo dpkg -i influxdb_1.8.5_arm64.deb
 
-bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+sudo apt-get install docker.io -y
 
-node-red-pi --max-old-space-size=256
-
-
-sudo systemctl daemon-reload
-sudo systemctl enable nodered.service
-sudo systemctl start nodered.service
+sudo docker run -itd --name mynodered --network host nodered/node-red
 
 
