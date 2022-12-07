@@ -16,6 +16,10 @@ wget https://dl.influxdata.com/influxdb/releases/influxdb_1.8.5_arm64.deb
 sudo dpkg -i influxdb_1.8.5_arm64.deb
 service influxdb restart
 
+systemctl enable grafana-server
+
+systemctl daemon-reload
+
 sudo docker run -itd --name mynodered --network host nodered/node-red
 
 
