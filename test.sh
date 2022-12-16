@@ -20,6 +20,13 @@ systemctl enable grafana-server
 
 systemctl daemon-reload
 
+wget https://dl.influxdata.com/telegraf/releases/telegraf_1.12.0-1_arm64.deb
+dpkg -i telegraf_1.12.0-1_arm64.deb
+service telegraf restart
 sudo docker run -itd --name mynodered --network host nodered/node-red
+sleep 5;
+sudo docker run -itd --name myrabbitmq -p 5672:5672 -p 15672:15672 -p 1883:1883 -p 15675:15675 rabbitmq:3-management
+sleep 5;
+sudo docker run -itd --name myinfluxdb -p 18086:8086 influxdb:2.4.0
 
 
