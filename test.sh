@@ -20,6 +20,9 @@ systemctl enable grafana-server
 
 systemctl daemon-reload
 
+sudo apt install docker.io -y
+sudo usermod -aG docker ubuntu
+
 wget https://dl.influxdata.com/telegraf/releases/telegraf_1.12.0-1_arm64.deb
 dpkg -i telegraf_1.12.0-1_arm64.deb
 service telegraf restart
